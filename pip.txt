@@ -1,0 +1,7 @@
+pip install sympy
+pip install numpy
+pip install matplotlib
+pip install mpl-toolkits.clifford
+pip install matplotlib
+pip install customtkinter
+pip install tkinter
