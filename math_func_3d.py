@@ -29,7 +29,6 @@ def get_vector(a, b):
 def plot_2d_function(function, a, b):
     # Create the sympy function f(x)
     f_x = sp.sympify(function)
-
     # Create domain and image
     domain_x = get_vector(a, b)
     image = [f_x.subs(symbol_x, value) for value in domain_x]
@@ -58,4 +57,4 @@ def plot_3d_function(function, a, b):
 
 
 if __name__ == "__main__":
-    main("sin(x)+cos(y)", 0.5)
+    main("cos(x)", 0.2)
