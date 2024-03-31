@@ -103,10 +103,13 @@ class MyTabView(ctk.CTkTabview):
         )
         self.clear_button.grid(row=3, column=2, padx=5, pady=10)
 
+        # TAB 2
+        ctk_textbox_scrollbar = ctk.CTkScrollbar(master=self.tab("Инструкция"))
+        ctk_textbox_scrollbar.grid(row=0, column=1, sticky="ns")
+
     def button_callback(self):
         Grafic_output(self.pole_vvoda.get(), self.slider.get()).main()
         plt.show()
-
 
 class Bok_button(ctk.CTkFrame):
     def __init__(self, master):
