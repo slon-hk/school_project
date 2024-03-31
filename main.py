@@ -61,15 +61,62 @@ class Grafic_output:
         # plt.show()
 
 
+class MyTabView(ctk.CTkTabview):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+
+        # создание вкладок
+        self.add("Функции")
+        self.add("Инструкция")
+
+        # добавление виджетов на вкладки
+        self.pole_vvoda = ctk.CTkEntry(
+            master=self.tab("Функции"),
+            height=50,
+            width=740,
+            placeholder_text="Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚",
+        )
+        self.pole_vvoda.grid(
+            row=1, column=1, padx=5, pady=10, sticky="ew", columnspan=2
+        )
+
+        # slider
+        self.slider = ctk.CTkSlider(master=self.tab("Функции"), height=30, width=740)
+        self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
+
+        # enter button
+        self.button = ctk.CTkButton(
+            master=self.tab("Функции"),
+            text="РџРѕСЃС‚СЂРѕРёС‚СЊ",
+            command=self.button_callback,
+            width=360,
+            height=50,
+        )
+        self.button.grid(row=3, column=1, padx=5, pady=10)
+
+        self.clear_button = ctk.CTkButton(
+            master=self.tab("Функции"),
+            text="РћС‚С‡РёСЃС‚РёС‚СЊ",
+            command=plt.clf,
+            width=360,
+            height=50,
+        )
+        self.clear_button.grid(row=3, column=2, padx=5, pady=10)
+
+    def button_callback(self):
+        Grafic_output(self.pole_vvoda.get(), self.slider.get()).main()
+        plt.show()
+
+
 class Bok_button(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
 
-        self.button_instrucia = ctk.CTkButton(self, text="Инструкция")
+        self.button_instrucia = ctk.CTkButton(self, text="Р�РЅСЃС‚СЂСѓРєС†РёСЏ")
         self.button_instrucia.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="w")
-        self.button_parametr = ctk.CTkButton(self, text="Параметр")
+        self.button_parametr = ctk.CTkButton(self, text="РџР°СЂР°РјРµС‚СЂ")
         self.button_parametr.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="w")
-        self.button_funcia = ctk.CTkButton(self, text="Функции")
+        self.button_funcia = ctk.CTkButton(self, text="Р¤СѓРЅРєС†РёРё")
         self.button_funcia.grid(row=2, column=0, padx=10, pady=(10, 0), sticky="w")
 
 
@@ -80,46 +127,45 @@ class App(ctk.CTk):
         self.title("project")
         self.geometry("800x600")
         self.resizable(False, False)
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=0)
+        self.grid_rowconfigure(0, weight=0)
 
-        # setting button
-        self.bok_button = Bok_button(self)
-        self.bok_button.grid(
-            row=0, column=1, padx=5, pady=(10, 0), sticky="nsw", rowspan=4
-        )
+        self.tab_view = MyTabView(master=self)
+        self.tab_view.grid(row=0, column=0, padx=20, pady=20)
 
-        # entery
-        self.pole_vvoda = ctk.CTkEntry(
-            self,
-            height=50,
-            width=100,
-            placeholder_text="Введите текст",
-        )
-        self.pole_vvoda.grid(
-            row=1, column=2, padx=5, pady=10, sticky="ew", columnspan=2
-        )
+    #     # entery
+    #     self.pole_vvoda = ctk.CTkEntry(
+    #         self,
+    #         height=50,
+    #         width=780,
+    #         placeholder_text="Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚",
+    #     )
+    #     self.pole_vvoda.grid(
+    #         row=1, column=1, padx=5, pady=10, sticky="ew", columnspan=2
+    #     )
 
-        # slider
-        self.slider = ctk.CTkSlider(self, height=30, width=620)
-        self.slider.grid(row=2, column=2, padx=5, pady=10, sticky="ew", columnspan=2)
+    #     # slider
+    #     self.slider = ctk.CTkSlider(self, height=30, width=780)
+    #     self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
 
-        # enter button
-        self.button = ctk.CTkButton(
-            self,
-            text="Построить",
-            command=self.button_callback,
-            width=305,
-            height=50)
-        self.button.grid(row=3, column=2, padx=5, pady=10)
+    #     # enter button
+    #     self.button = ctk.CTkButton(
+    #         self,
+    #         text="РџРѕСЃС‚СЂРѕРёС‚СЊ",
+    #         command=self.button_callback,
+    #         width=380,
+    #         height=50,
+    #     )
+    #     self.button.grid(row=3, column=1, padx=5, pady=10)
 
-        self.clear_button = ctk.CTkButton(
-            self, text="Отчистить", command=plt.clf, width=305, height=50)
-        self.clear_button.grid(row=3, column=3, padx=5, pady=10)
+    #     self.clear_button = ctk.CTkButton(
+    #         self, text="РћС‚С‡РёСЃС‚РёС‚СЊ", command=plt.clf, width=380, height=50
+    #     )
+    #     self.clear_button.grid(row=3, column=2, padx=5, pady=10)
 
-    def button_callback(self):
-        Grafic_output(self.pole_vvoda.get(), self.slider.get()).main()
-        plt.show()
+    # def button_callback(self):
+    #     Grafic_output(self.pole_vvoda.get(), self.slider.get()).main()
+    #     plt.show()
 
 
 app = App()
