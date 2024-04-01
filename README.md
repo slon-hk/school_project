@@ -16,9 +16,9 @@
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_1.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_2.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_3.jpg" alt="App Screenshot"></p>
-<h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Интерфейс программы</h2>
-<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_4.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_5.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_6.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_7.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_8.jpg" alt="App Screenshot"></p>
+<h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Интерфейс программы</h2>
+<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_4.jpg" alt="App Screenshot"></p>
