@@ -66,30 +66,28 @@ class MyTabView(ctk.CTkTabview):
         super().__init__(master, **kwargs)
 
         # РЎРѓР С•Р В·Р Т‘Р В°Р Р…Р С‘Р Вµ Р Р†Р С”Р В»Р В°Р Т‘Р С•Р С”
-        self.add("Р¤СѓРЅРєС†РёРё")
-        self.add("Р�РЅСЃС‚СЂСѓРєС†РёСЏ")
+        self.add("Функции")
+        self.add("Инструкция")
 
         # Р Т‘Р С•Р В±Р В°Р Р†Р В»Р ВµР Р…Р С‘Р Вµ Р Р†Р С‘Р Т‘Р В¶Р ВµРЎвЂљР С•Р Р† Р Р…Р В° Р Р†Р С”Р В»Р В°Р Т‘Р С”Р С‘
         self.pole_vvoda = ctk.CTkEntry(
-            master=self.tab("Р¤СѓРЅРєС†РёРё"),
+            master=self.tab("Функции"),
             height=50,
             width=740,
-            placeholder_text="Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚",
+            placeholder_text="Введите текст",
         )
         self.pole_vvoda.grid(
             row=1, column=1, padx=5, pady=10, sticky="ew", columnspan=2
         )
 
         # slider
-        self.slider = ctk.CTkSlider(
-            master=self.tab("Р¤СѓРЅРєС†РёРё"), height=30, width=740
-        )
+        self.slider = ctk.CTkSlider(master=self.tab("Функции"), height=30, width=740)
         self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
 
         # enter button
         self.button = ctk.CTkButton(
-            master=self.tab("Р¤СѓРЅРєС†РёРё"),
-            text="РџРѕСЃС‚СЂРѕРёС‚СЊ",
+            master=self.tab("Функции"),
+            text="Построить",
             command=self.button_callback,
             width=360,
             height=50,
@@ -97,8 +95,8 @@ class MyTabView(ctk.CTkTabview):
         self.button.grid(row=3, column=1, padx=5, pady=10)
 
         self.clear_button = ctk.CTkButton(
-            master=self.tab("Р¤СѓРЅРєС†РёРё"),
-            text="РћС‚С‡РёСЃС‚РёС‚СЊ",
+            master=self.tab("Функции"),
+            text="Отчистить",
             command=plt.clf,
             width=360,
             height=50,
@@ -106,9 +104,7 @@ class MyTabView(ctk.CTkTabview):
         self.clear_button.grid(row=3, column=2, padx=5, pady=10)
 
         # TAB 2
-        self.my_frame = MyFrame(
-            master=self.tab("Р�РЅСЃС‚СЂСѓРєС†РёСЏ"), width=300, height=200
-        )
+        self.my_frame = MyFrame(master=self.tab("Инструкция"), width=300, height=200)
         self.my_frame.grid(row=0, column=0, padx=20, pady=20)
 
     def button_callback(self):
