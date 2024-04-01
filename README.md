@@ -12,7 +12,7 @@
 •   Простой и интуитивно понятный интерфейс для создания математических моделей в трехмерном и двумерном пространстве.</p>
 <h2 class="code-line" data-line-start=19 data-line-end=20 ><a id="_19"></a>Аннотация</h2>
 <p class="has-line-data" data-line-start="20" data-line-end="21">Продуктом проектной деятельности является программа, предназначенная для создания математических моделей в трехмерном и двумерном пространстве.</p>
-<h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Интерфейс</h2>
+<h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Примеры использования программы</h2>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_1.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_2.jpg" alt="App Screenshot"></p>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_3.jpg" alt="App Screenshot"></p>
@@ -22,3 +22,4 @@
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_8.jpg" alt="App Screenshot"></p>
 <h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Интерфейс программы</h2>
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_4.jpg" alt="App Screenshot"></p>
+<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_9.jpg" alt="App Screenshot"></p>

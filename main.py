@@ -81,7 +81,9 @@ class MyTabView(ctk.CTkTabview):
         )
 
         # slider
-        self.slider = ctk.CTkSlider(master=self.tab("Функции"), height=30, width=740)
+        self.slider = ctk.CTkSlider(
+            master=self.tab("Функции"), height=30, width=740, from_=1, to=0.01
+        )
         self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
 
         # enter button
@@ -104,7 +106,7 @@ class MyTabView(ctk.CTkTabview):
         self.clear_button.grid(row=3, column=2, padx=5, pady=10)
 
         # TAB 2
-        self.my_frame = MyFrame(master=self.tab("Инструкция"), width=300, height=200)
+        self.my_frame = MyFrame(master=self.tab("Инструкция"), width=700, height=400)
         self.my_frame.grid(row=0, column=0, padx=20, pady=20)
 
     def button_callback(self):
@@ -117,9 +119,99 @@ class MyFrame(ctk.CTkScrollableFrame):
         super().__init__(master, **kwargs)
 
         # add widgets onto the frame...
-        text = "РўС‹Рє С‚С‹Рє С‚С‹Рє С‚С‹Рє С‚С‹Рє"
-        self.label = ctk.CTkLabel(self, text=text)
-        self.label.grid(row=1, column=0, padx=20)
+        text = """
+        Данная программа предназначена для построения моделей в пространстве. Ниже приведены\n        все математические функции которые поддерживаются программой
+
+        Сложение двух чисел - x+n
+
+        Вычитание двух чисел - x-n
+
+        Умножение - x*n
+
+        Деление двух чисел - x/n
+
+        Целочисленное деление двух чисел - x//n
+
+        Получение остатка от деления - x%n
+
+        Возведение в степень - x**n
+
+        fabs(X) - модуль X.
+
+        factorial(X) - факториал числа X.
+
+        floor(X) - округление вниз.
+
+        fmod(X, Y) - остаток от деления X на Y.
+
+        frexp(X) - возвращает мантиссу и экспоненту числа.
+
+        ldexp(X, I) - X * 2I. Функция, обратная функции math.frexp().
+
+        fsum(последовательность) - сумма всех членов последовательности. Эквивалент встроенной\n        функции sum(), но math.fsum() более точна для чисел с плавающей точкой.
+
+        modf(X) - возвращает дробную и целую часть числа X. Оба числа имеют тот же знак, что и X.
+
+        trunc(X) - усекает значение X до целого.
+
+        exp(X) - eX.
+
+        log(X, [base]) - логарифм X по основанию base. Если base не указан, вычисляется натуральный\n        логарифм.
+
+        log1p(X) - натуральный логарифм (1 + X). При X → 0 точнее, чем math.log(1+X).
+
+        log10(X) - логарифм X по основанию 10.
+
+        log2(X) - логарифм X по основанию 2.
+
+        pow(X, Y) - XY.
+
+        sqrt(X) - квадратный корень из X.
+
+        acos(X) - арккосинус X. В радианах.
+
+        asin(X) - арксинус X. В радианах.
+
+        atan(X) - арктангенс X. В радианах.
+
+        atan2(Y, X) - арктангенс Y/X. В радианах. С учетом четверти, в которой находится точка (X, Y).
+
+        cos(X) - косинус X (X указывается в радианах).
+
+        sin(X) - синус X (X указывается в радианах).
+
+        tan(X) - тангенс X (X указывается в радианах).
+
+        degrees(X) - конвертирует радианы в градусы.
+
+        radians(X) - конвертирует градусы в радианы.
+
+        cosh(X) - вычисляет гиперболический косинус.
+
+        sinh(X) - вычисляет гиперболический синус.
+
+        tanh(X) - вычисляет гиперболический тангенс.
+
+        acosh(X) - вычисляет обратный гиперболический косинус.
+
+        asinh(X) - вычисляет обратный гиперболический синус.
+
+        atanh(X) - вычисляет обратный гиперболический тангенс.
+
+        gamma(X) - гамма-функция X.
+
+        lgamma(X) - натуральный логарифм гамма-функции X.
+
+        pi - pi = 3,1415926...
+
+        e - e = 2,718281...
+
+        Более подробный список функций вы можете найти в документации встроенной библиотеки\n\n        python - math, numpy и matplotlib"""
+
+        self.label = ctk.CTkLabel(
+            self, text=text, justify="left", height=100, width=750
+        )
+        self.label.grid(row=0, column=0, padx=20)
 
 
 class App(ctk.CTk):
