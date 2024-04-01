@@ -25,13 +25,13 @@
 <p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_9.jpg" alt="App Screenshot"></p>
 <h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Необходимые модули</h2>
 <p class="has-line-data" data-line-start="20" data-line-end="21">При необходимости используйте pip3
-pip install sympy
-pip install numpy
-pip install matplotlib
-pip install mpl-toolkits.clifford
-pip install matplotlib
-pip install customtkinter
-pip install tkinter</p>
+        pip install sympy
+        pip install numpy
+        pip install matplotlib
+        pip install mpl-toolkits.clifford
+        pip install matplotlib
+        pip install customtkinter
+        pip install tkinter</p>
 <h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Инструкция</h2>
 <p class="code-line" data-line-start=19 data-line-end=20 ><a id="_19"></a>Данная программа предназначена для построения моделей в пространстве. Ниже приведены все математические функции которые поддерживаются программой:
 
