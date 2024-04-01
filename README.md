@@ -13,4 +13,6 @@
 <h2 class="code-line" data-line-start=19 data-line-end=20 ><a id="_19"></a>Аннотация</h2>
 <p class="has-line-data" data-line-start="20" data-line-end="21">Продуктом проектной деятельности является программа, предназначенная для создания математических моделей в трехмерном и двумерном пространстве.</p>
 <h2 class="code-line" data-line-start=22 data-line-end=23 ><a id="_22"></a>Интерфейс</h2>
-<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="https://via.placeholder.com/468x300?text=App+Screenshot+Here" alt="App Screenshot"></p>
+<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_1.jpg" alt="App Screenshot"></p>
+<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_2.jpg" alt="App Screenshot"></p>
+<p class="has-line-data" data-line-start="23" data-line-end="24"><img src="\image\image_3.jpg" alt="App Screenshot"></p>

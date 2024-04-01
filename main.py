@@ -65,13 +65,13 @@ class MyTabView(ctk.CTkTabview):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
 
-        # создание вкладок
-        self.add("Функции")
-        self.add("Инструкция")
+        # РЎРѓР С•Р В·Р Т‘Р В°Р Р…Р С‘Р Вµ Р Р†Р С”Р В»Р В°Р Т‘Р С•Р С”
+        self.add("Р¤СѓРЅРєС†РёРё")
+        self.add("Р�РЅСЃС‚СЂСѓРєС†РёСЏ")
 
-        # добавление виджетов на вкладки
+        # Р Т‘Р С•Р В±Р В°Р Р†Р В»Р ВµР Р…Р С‘Р Вµ Р Р†Р С‘Р Т‘Р В¶Р ВµРЎвЂљР С•Р Р† Р Р…Р В° Р Р†Р С”Р В»Р В°Р Т‘Р С”Р С‘
         self.pole_vvoda = ctk.CTkEntry(
-            master=self.tab("Функции"),
+            master=self.tab("Р¤СѓРЅРєС†РёРё"),
             height=50,
             width=740,
             placeholder_text="Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚",
@@ -81,12 +81,14 @@ class MyTabView(ctk.CTkTabview):
         )
 
         # slider
-        self.slider = ctk.CTkSlider(master=self.tab("Функции"), height=30, width=740)
+        self.slider = ctk.CTkSlider(
+            master=self.tab("Р¤СѓРЅРєС†РёРё"), height=30, width=740
+        )
         self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
 
         # enter button
         self.button = ctk.CTkButton(
-            master=self.tab("Функции"),
+            master=self.tab("Р¤СѓРЅРєС†РёРё"),
             text="РџРѕСЃС‚СЂРѕРёС‚СЊ",
             command=self.button_callback,
             width=360,
@@ -95,7 +97,7 @@ class MyTabView(ctk.CTkTabview):
         self.button.grid(row=3, column=1, padx=5, pady=10)
 
         self.clear_button = ctk.CTkButton(
-            master=self.tab("Функции"),
+            master=self.tab("Р¤СѓРЅРєС†РёРё"),
             text="РћС‚С‡РёСЃС‚РёС‚СЊ",
             command=plt.clf,
             width=360,
@@ -104,23 +106,24 @@ class MyTabView(ctk.CTkTabview):
         self.clear_button.grid(row=3, column=2, padx=5, pady=10)
 
         # TAB 2
-        ctk_textbox_scrollbar = ctk.CTkScrollbar(master=self.tab("Инструкция"))
-        ctk_textbox_scrollbar.grid(row=0, column=1, sticky="ns")
+        self.my_frame = MyFrame(
+            master=self.tab("Р�РЅСЃС‚СЂСѓРєС†РёСЏ"), width=300, height=200
+        )
+        self.my_frame.grid(row=0, column=0, padx=20, pady=20)
 
     def button_callback(self):
         Grafic_output(self.pole_vvoda.get(), self.slider.get()).main()
         plt.show()
 
-class Bok_button(ctk.CTkFrame):
-    def __init__(self, master):
-        super().__init__(master)
 
-        self.button_instrucia = ctk.CTkButton(self, text="Р�РЅСЃС‚СЂСѓРєС†РёСЏ")
-        self.button_instrucia.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="w")
-        self.button_parametr = ctk.CTkButton(self, text="РџР°СЂР°РјРµС‚СЂ")
-        self.button_parametr.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="w")
-        self.button_funcia = ctk.CTkButton(self, text="Р¤СѓРЅРєС†РёРё")
-        self.button_funcia.grid(row=2, column=0, padx=10, pady=(10, 0), sticky="w")
+class MyFrame(ctk.CTkScrollableFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+
+        # add widgets onto the frame...
+        text = "РўС‹Рє С‚С‹Рє С‚С‹Рє С‚С‹Рє С‚С‹Рє"
+        self.label = ctk.CTkLabel(self, text=text)
+        self.label.grid(row=1, column=0, padx=20)
 
 
 class App(ctk.CTk):
@@ -135,40 +138,6 @@ class App(ctk.CTk):
 
         self.tab_view = MyTabView(master=self)
         self.tab_view.grid(row=0, column=0, padx=20, pady=20)
-
-    #     # entery
-    #     self.pole_vvoda = ctk.CTkEntry(
-    #         self,
-    #         height=50,
-    #         width=780,
-    #         placeholder_text="Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚",
-    #     )
-    #     self.pole_vvoda.grid(
-    #         row=1, column=1, padx=5, pady=10, sticky="ew", columnspan=2
-    #     )
-
-    #     # slider
-    #     self.slider = ctk.CTkSlider(self, height=30, width=780)
-    #     self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
-
-    #     # enter button
-    #     self.button = ctk.CTkButton(
-    #         self,
-    #         text="РџРѕСЃС‚СЂРѕРёС‚СЊ",
-    #         command=self.button_callback,
-    #         width=380,
-    #         height=50,
-    #     )
-    #     self.button.grid(row=3, column=1, padx=5, pady=10)
-
-    #     self.clear_button = ctk.CTkButton(
-    #         self, text="РћС‚С‡РёСЃС‚РёС‚СЊ", command=plt.clf, width=380, height=50
-    #     )
-    #     self.clear_button.grid(row=3, column=2, padx=5, pady=10)
-
-    # def button_callback(self):
-    #     Grafic_output(self.pole_vvoda.get(), self.slider.get()).main()
-    #     plt.show()
 
 
 app = App()
