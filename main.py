@@ -66,11 +66,16 @@ class MyTabView(ctk.CTkTabview):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
 
-        # РЎРѓР С•Р В·Р Т‘Р В°Р Р…Р С‘Р Вµ Р Р†Р С”Р В»Р В°Р Т‘Р С•Р С”
+        # Созжание вкладок
         self.add("Функции")
         self.add("Инструкция")
 
-        # Р Т‘Р С•Р В±Р В°Р Р†Р В»Р ВµР Р…Р С‘Р Вµ Р Р†Р С‘Р Т‘Р В¶Р ВµРЎвЂљР С•Р Р† Р Р…Р В° Р Р†Р С”Р В»Р В°Р Т‘Р С”Р С‘
+        # Создания поля ввода
+        intro_text = "Тык Тык Тык\n тык тык тык\n тык тык тык"
+        self.intro_text = ctk.CTkLabel(master = self.tab("Функции"), text=intro_text)
+        self.intro_text.grid(
+            row=0, column=1, padx=5, pady=10, sticky="ew", columnspan=2
+        )
         self.pole_vvoda = ctk.CTkEntry(
             master=self.tab("Функции"),
             height=50,
@@ -78,14 +83,21 @@ class MyTabView(ctk.CTkTabview):
             placeholder_text="Введите текст",
         )
         self.pole_vvoda.grid(
-            row=1, column=1, padx=5, pady=10, sticky="ew", columnspan=2
+            row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2
         )
 
         # slider
+        label_slider_text = "Установка точности построения графика"
+        self.label_slider = ctk.CTkLabel(
+            master=self.tab("Функции"), text=label_slider_text
+        )
+        self.label_slider.grid(
+            row=3, column=1, padx=5, pady=10, sticky="ew", columnspan=2
+        )
         self.slider = ctk.CTkSlider(
             master=self.tab("Функции"), height=30, width=740, from_=1, to=0.01
         )
-        self.slider.grid(row=2, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
+        self.slider.grid(row=4, column=1, padx=5, pady=10, sticky="ew", columnspan=2)
 
         # enter button
         self.button = ctk.CTkButton(
@@ -95,7 +107,7 @@ class MyTabView(ctk.CTkTabview):
             width=360,
             height=50,
         )
-        self.button.grid(row=3, column=1, padx=5, pady=10)
+        self.button.grid(row=5, column=1, padx=5, pady=10)
 
         self.clear_button = ctk.CTkButton(
             master=self.tab("Функции"),
@@ -104,7 +116,7 @@ class MyTabView(ctk.CTkTabview):
             width=360,
             height=50,
         )
-        self.clear_button.grid(row=3, column=2, padx=5, pady=10)
+        self.clear_button.grid(row=5, column=2, padx=5, pady=10)
 
         # TAB 2
         self.my_frame = MyFrame(master=self.tab("Инструкция"), width=700, height=400)
