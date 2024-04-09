@@ -93,8 +93,7 @@ class MyTabView(ctk.CTkTabview):
             text="Построить",
             command=self.button_callback,
             width=740,
-            height=50,
-        )
+            height=50)
         self.button.grid(row=4, column=1, padx=5, pady=10, columnspan=2)
 
         text = """
